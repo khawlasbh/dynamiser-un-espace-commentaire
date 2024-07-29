@@ -97,7 +97,24 @@
   </div>
 </div>
 <script>
-   document.getElementById('comment-space').addEventListener('submit' function(event))
+   document.getElementById('comment-space').addEventListener('submit', function(event) {
+
+   event.preventDefault();   // Empêcher le rechargement de la page
+
+   // Recuperation des champs
+   const firstName = document.getElementById('first-name').value.trim();
+   const lastName = document.getElementById('last-name').value.trim();
+   const message = document.getElementById('message').value.trim();
+   const erroeMessage = document.getElementById('error-message');
+
+   //Vérification des champs
+   if (firstName === '' || lastName === '' || message === '') {
+    errorMessage.style.display = 'block';
+    return;
+   } else { 
+    erroeMessage.style.display = 'none'
+   }
+    }
   
     
   
